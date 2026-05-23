@@ -1,0 +1,10 @@
+{
+  "name": "Jelajah Pintar (Edisi Yogyakarta)",
+  "description": "Aplikasi pencarian rute wisata dan kurasi tempat kuliner lokal legendaris yang searah (Zero-Detour) di Provinsi Yogyakarta.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
