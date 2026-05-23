@@ -60,13 +60,11 @@ export default function HalamanPeta({
       {/* Main Map Frame */}
       <div className="flex-1 relative w-full bg-orange-50/20 border-b border-white/40 overflow-hidden">
         {hasValidKey ? (
-          <APIProvider apiKey={apiKey} version="weekly">
-            <RealGoogleMap
-              origin={origin}
-              destination={destination}
-              selectedDetour={selectedDetour}
-            />
-          </APIProvider>
+          <RealGoogleMap
+            origin={origin}
+            destination={destination}
+            selectedDetour={selectedDetour}
+          />
         ) : (
           <FallbackProjectionMap 
             origin={origin}
@@ -222,9 +220,8 @@ function RealGoogleMap({ origin, destination, selectedDetour }: RealMapProps) {
     polylinesRef.current.forEach(p => p.setMap(null));
     polylinesRef.current = [];
 
-    const waypoints = selectedDetour ? [{
-      location: new google.maps.LatLng(selectedDetour.restaurant.lat, selectedDetour.restaurant.lng),
-      stopover: true
+    const intermediates = selectedDetour ? [{
+      location: new google.maps.LatLng(selectedDetour.restaurant.lat, selectedDetour.restaurant.lng)
     }] : [];
 
     routesLib.Route.computeRoutes({
@@ -232,7 +229,7 @@ function RealGoogleMap({ origin, destination, selectedDetour }: RealMapProps) {
       destination: { lat: destination.lat, lng: destination.lng },
       travelMode: 'DRIVING',
       //@ts-ignore
-      waypoints: waypoints,
+      intermediates: intermediates,
       fields: ['path', 'viewport', 'distanceMeters', 'durationMillis'],
     }).then(({ routes }) => {
       if (routes?.[0]) {

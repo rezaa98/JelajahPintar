@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { Location, Restaurant } from './types';
 import { calculateMockRouteStats } from './utils';
+import { APIProvider } from '@vis.gl/react-google-maps';
 
 // Import Modular Components
 import SplashError from './components/SplashError';
@@ -80,6 +81,52 @@ export default function App() {
     setHalaman(1);
   };
 
+  const appContent = (
+    <div 
+      className="w-full max-w-md h-[100dvh] relative overflow-hidden shadow-2xl border-x border-white/50 flex flex-col"
+      style={{
+        background: `radial-gradient(circle at 0% 0%, #ffedd5 0%, transparent 50%), 
+                     radial-gradient(circle at 100% 0%, #fde68a 0%, transparent 50%), 
+                     radial-gradient(circle at 100% 100%, #fdba74 0%, transparent 50%), 
+                     radial-gradient(circle at 0% 100%, #fed7aa 0%, transparent 50%), 
+                     #fff7ed`
+      }}
+    >
+      
+      {halaman === 1 && (
+        <HalamanInput 
+          onSearch={handleSearch} 
+          isLoading={isLoading} 
+          apiKey={API_KEY}
+          hasValidKey={hasValidKey}
+        />
+      )}
+
+      {halaman === 2 && origin && destination && (
+        <HalamanPeta
+          origin={origin}
+          destination={destination}
+          onBack={() => setHalaman(1)}
+          onSelectRestaurant={handleSelectRestaurant}
+          apiKey={API_KEY}
+          hasValidKey={hasValidKey}
+        />
+      )}
+
+      {halaman === 3 && origin && destination && selectedRestaurant && (
+        <HalamanEksekusi
+          origin={origin}
+          destination={destination}
+          restaurant={selectedRestaurant}
+          detourMin={detourMin}
+          originalDurationMin={originalDurationMin}
+          onReset={handleReset}
+        />
+      )}
+
+    </div>
+  );
+
   return (
     <div 
       className="min-h-screen flex items-center justify-center relative select-none selection:bg-orange-200"
@@ -91,47 +138,13 @@ export default function App() {
                      #fff7ed`
       }}
     >
-      <div 
-        className="w-full max-w-md h-[100dvh] relative overflow-hidden shadow-2xl border-x border-white/50 flex flex-col"
-        style={{
-          background: `radial-gradient(circle at 0% 0%, #ffedd5 0%, transparent 50%), 
-                       radial-gradient(circle at 100% 0%, #fde68a 0%, transparent 50%), 
-                       radial-gradient(circle at 100% 100%, #fdba74 0%, transparent 50%), 
-                       radial-gradient(circle at 0% 100%, #fed7aa 0%, transparent 50%), 
-                       #fff7ed`
-        }}
-      >
-        
-        {halaman === 1 && (
-          <HalamanInput 
-            onSearch={handleSearch} 
-            isLoading={isLoading} 
-          />
-        )}
-
-        {halaman === 2 && origin && destination && (
-          <HalamanPeta
-            origin={origin}
-            destination={destination}
-            onBack={() => setHalaman(1)}
-            onSelectRestaurant={handleSelectRestaurant}
-            apiKey={API_KEY}
-            hasValidKey={hasValidKey}
-          />
-        )}
-
-        {halaman === 3 && origin && destination && selectedRestaurant && (
-          <HalamanEksekusi
-            origin={origin}
-            destination={destination}
-            restaurant={selectedRestaurant}
-            detourMin={detourMin}
-            originalDurationMin={originalDurationMin}
-            onReset={handleReset}
-          />
-        )}
-
-      </div>
+      {hasValidKey ? (
+        <APIProvider apiKey={API_KEY} version="weekly" libraries={['places']}>
+          {appContent}
+        </APIProvider>
+      ) : (
+        appContent
+      )}
     </div>
   );
 }

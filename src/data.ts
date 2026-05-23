@@ -94,6 +94,46 @@ export const PRESET_LANDMARKS: Location[] = [
     lat: -7.8052,
     lng: 110.3642,
     description: 'Istana resmi Kesultanan Yogyakarta yang kental dengan warisan adat Jawa.'
+  },
+  {
+    id: 'candi-borobudur',
+    name: 'Candi Borobudur',
+    regency: 'Sleman',
+    lat: -7.6079,
+    lng: 110.1216,
+    description: 'Candi Buddha terbesar di dunia, ikon mahakarya bersejarah peninggalan Dinasti Syailendra.'
+  },
+  {
+    id: 'candi-ratu-boko',
+    name: 'Situs Wisata Candi Ratu Boko',
+    regency: 'Sleman',
+    lat: -7.7705,
+    lng: 110.4894,
+    description: 'Reruntuhan istana megah abad ke-8 di puncak bukit, sangat indah kala senja tiba.'
+  },
+  {
+    id: 'candi-sambisari',
+    name: 'Candi Sambisari',
+    regency: 'Sleman',
+    lat: -7.7624,
+    lng: 110.4473,
+    description: 'Candi Hindu eksotis yang terkubur lahar Gunung Merapi, terletak 6,5 meter di bawah permukaan tanah.'
+  },
+  {
+    id: 'candi-ijo',
+    name: 'Candi Ijo',
+    regency: 'Sleman',
+    lat: -7.7838,
+    lng: 110.5126,
+    description: 'Candi tertinggi di Yogyakarta dengan pemandangan sunset menakjubkan menghadap landasan udara Adisutjipto.'
+  },
+  {
+    id: 'candi-plaosan',
+    name: 'Candi Plaosan (Candi Kembar Lor & Kidul)',
+    regency: 'Sleman',
+    lat: -7.7405,
+    lng: 110.5042,
+    description: 'Candi Buddha kembar romantis saksi cinta beda keyakinan antara Raja Hindu Rakai Pikatan & Pramodawardhani.'
   }
 ];
 
@@ -405,6 +445,104 @@ export const LEGENDARY_RESTAURANTS: Restaurant[] = [
     cuisine: 'Jajanan Pasar Tradisional',
     specialty: 'Lapis Segitiga Gental Manis, Cenil Merah, & Gatot-Gethuk Legenda',
     openNow: true
+  },
+  {
+    id: 'lobster-pak-sis',
+    name: 'Warung Lobster Pak Sis Pantai Drini',
+    rating: 4.7,
+    userRatingCount: 2200,
+    formattedAddress: 'Pantai Drini, Banjarejo, Tanjungsari, Kab. Gunung Kidul',
+    lat: -8.1368,
+    lng: 110.5945,
+    photoUrl: 'https://images.unsplash.com/photo-1559742811-82410b510ca0?auto=format&fit=crop&w=600&q=80',
+    description: 'Sajian hidangan laut segar berkelas dunia, terkenal dengan tangkapan lobster karang selatan yang dimasak bumbu lada hitam atau asam manis pedas nikmat tepat di pinggir pantai pasir putih.',
+    cuisine: 'Seafood Pantai Segar',
+    specialty: 'Lobster Karang Saus Padang & Cumi Bakar Madu Sereh',
+    openNow: true
+  },
+  {
+    id: 'seafood-depok-salsabila',
+    name: 'Seafood Depok Salsabila (Pantai Depok)',
+    rating: 4.6,
+    userRatingCount: 5300,
+    formattedAddress: 'Kawasan Pantai Depok, Kretek, Kab. Bantul',
+    lat: -8.0125,
+    lng: 110.3155,
+    photoUrl: 'https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?auto=format&fit=crop&w=600&q=80',
+    description: 'Lokasi kuliner laut paling populer selepas berwisata di Pantai Parangtritis. Pilih ikan langsung dari pelelangan lokal dan bumbu bakar tradisional khas jogja selatan.',
+    cuisine: 'Seafood Bakar Tradisional',
+    specialty: 'Kakap Merah Bakar Jimbaran & Cumi Goreng Tepung Gurih',
+    openNow: true
+  },
+  {
+    id: 'resto-bukit-indah',
+    name: 'Resto Bukit Indah (Bukit Bintang Pathuk)',
+    rating: 4.4,
+    userRatingCount: 6400,
+    formattedAddress: 'Jl. Jogja - Wonosari KM.15, Pathuk, Kab. Gunung Kidul',
+    lat: -7.8485,
+    lng: 110.4792,
+    photoUrl: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80',
+    description: 'Restoran ikonik di kawasan Bukit Bintang, tempat beristirahat melepas lelah dalam rute perjalanan pantai sembari menatap panorama gemerlap lampu malam kota Yogyakarta.',
+    cuisine: 'Rumahan Indonesia & Nusantara',
+    specialty: 'Sop Buntut Gurih, Ayam Goreng Madu, & Wedang Jahe Susu Selasar',
+    openNow: true
+  },
+  {
+    id: 'kopi-panggang-gunungkidul',
+    name: 'Warung Kopi Panggang Gunungkidul',
+    rating: 4.5,
+    userRatingCount: 3900,
+    formattedAddress: 'Jl. Panggang - Wonosari, Girisuko, Panggang, Kab. Gunung Kidul',
+    lat: -8.0055,
+    lng: 110.4582,
+    photoUrl: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80',
+    description: 'Rest Area bernuansa limasan jati asri legendaris di rute selatan menuju pantai Parangtritis dan Baron. Sangat cocok menyantap masakan rumahan ndeso.',
+    cuisine: 'Kuliner Ndeso Jati / Kopi',
+    specialty: 'Kopi Panggang Tubruk Es & Sayur Lombok Ijo Ndeso Mandi Gurih',
+    openNow: true
+  },
+  {
+    id: 'pawon-purba',
+    name: 'Pawon Purba Cafe & Resto Nglanggeran',
+    rating: 4.6,
+    userRatingCount: 3100,
+    formattedAddress: 'Kawasan Gunung Api Purba, Nglanggeran, Patuk, Kab. Gunung Kidul',
+    lat: -7.8765,
+    lng: 110.5414,
+    photoUrl: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80',
+    description: 'Restoran khas kaki gunung dengan masakan tradisional prasmanan yang digodog menggunakan kayu bakar kuno.',
+    cuisine: 'Prasmanan Jawa Pawon',
+    specialty: 'Sego Tiwul Anget, Jangan Ndolo, & Tempe Garit Sambal Korek',
+    openNow: true
+  },
+  {
+    id: 'warung-simbok-wonosari',
+    name: 'Warung Kampoeng Simbok Wonosari',
+    rating: 4.5,
+    userRatingCount: 5600,
+    formattedAddress: 'Jl. Jogja - Wonosari KM.36, Logandeng, Playen, Kab. Gunung Kidul',
+    lat: -7.9545,
+    lng: 110.5798,
+    photoUrl: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80',
+    description: 'Tempat persinggahan keluarga paling ramai yang menyajikan masakan tradisional ayam kampung goreng yang empuk dan renyah dengan sambal limau menyegarkan.',
+    cuisine: 'Rumahan Ayam Goreng',
+    specialty: 'Ayam Kampung Goreng Kremes Sereh & Sayur Lodeh Labu Siam',
+    openNow: true
+  },
+  {
+    id: 'heha-ocean-resto',
+    name: 'HeHa Ocean View Cliffside Restaurant',
+    rating: 4.4,
+    userRatingCount: 19200,
+    formattedAddress: 'Sawah, Girikarto, Panggang, Kab. Gunung Kidul',
+    lat: -8.1189,
+    lng: 110.4855,
+    photoUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80',
+    description: 'Restoran modern bertaraf internasional di puncak tebing karang pantai selatan, menyajikan petualangan kuliner sembari menikmati ombak laut lepas dan sunset Samudra Hindia.',
+    cuisine: 'Modern Cliffside Grills & Western',
+    specialty: 'Heha Premium Grilled Ribs & Ocean Breezy Mocktails',
+    openNow: true
   }
 ];
 
@@ -432,5 +570,21 @@ export const PRESET_ROUTES = [
     destination: PRESET_LANDMARKS[5], // Mangunan
     routeType: 'City-Bantul',
     description: 'Perjalanan budaya dari pusat kesultanan menuju wisata asri puncak pinus selatan Bantul.'
+  },
+  {
+    id: 'candi-sambisari-to-candi-ijo',
+    name: 'Rute Candi Sambisari ➔ Candi Ijo',
+    origin: PRESET_LANDMARKS[12], // Sambisari
+    destination: PRESET_LANDMARKS[13], // Ijo
+    routeType: 'Candi-Tour',
+    description: 'Penjelajahan candi bawah tanah Sambisari yang sejuk hingga bukit tertinggi candi Ijo untuk berburu sunset.'
+  },
+  {
+    id: 'borobudur-to-prambanan',
+    name: 'Rute Grand Candi (Borobudur ➔ Prambanan)',
+    origin: PRESET_LANDMARKS[10], // Borobudur
+    destination: PRESET_LANDMARKS[1], // Prambanan
+    routeType: 'Grand-Heritage',
+    description: 'Menyambungkan rute spiritual teragung penghubung Candi Buddha terbesar di dunia dan Candi Hindu terindah.'
   }
 ];
